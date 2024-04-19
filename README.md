@@ -1,84 +1,43 @@
 # Minesweeper
 
-A minesweeper-like game written in C# using MonoGame.
+Este é um jogo de campo minado (Minesweeper) escrito em C# com MonoGame. O repositório utilizado para o trabalho foi o seguinte: https://github.com/lunacys/Minesweeper
 
-The game is inspired by [Mines](https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/mines.html) from Simon Tatham's Portable Puzzle Collection.
+## Descrição
 
-## Build
+O Minesweeper é um jogo em que o jogador deve descobrir as células do campo de jogo que não contêm minas. O objetivo é revelar todas as células sem minas, evitando clicar nas células que as contêm. O jogo termina quando todas as células sem minas são reveladas ou quando uma célula com uma mina é clicada.
 
-In order to build the DesktopGL version of the project as well as the minesweeper framework, you'll need `.NET Core 3.1` or higher. Also you'll need [MonoGame](https://monogame.net) installed in order to build the game content. All the other required packages are referenced via NuGet:
+## Funcionalidades
 
- - ImGUI.NET
- - MonoGame.Extended
+1. **`CreateBoard(rows, cols, mines)`:** Este método cria um novo tabuleiro do jogo com o número especificado de linhas, colunas e minas. Retorna um tabuleiro inicializado com células ocultas e minas posicionadas aleatoriamente.
 
-As soon as MonoGame and .NET Core are installed, go to the `./Source` directory and either run
+2. **`PrintBoard(board, reveal=false)`:** Este método imprime o tabuleiro atual do jogo. Se `reveal` for verdadeiro, todas as células serão reveladas, mostrando as minas e os números que indicam o número de minas adjacentes a cada célula.
 
-```powershell
-dotnet build 
-```
+3. **`RevealCell(board, row, col)`:** Este método revela o conteúdo de uma célula específica do tabuleiro. Se a célula contiver uma mina, o jogo termina. Se a célula estiver vazia, todas as células adjacentes vazias serão reveladas recursivamente.
 
-to build Minesweeper, or
+4. **`MarkCell(board, row, col)`:** Este método marca ou desmarca uma célula como suspeita de conter uma mina. As células marcadas são exibidas como bandeiras quando o tabuleiro é impresso.
 
-```powershell
+5. **`CheckWin(board)`:** Este método verifica se o jogador ganhou o jogo, ou seja, se todas as células sem minas foram reveladas.
+
+6. **`PlayGame(rows, cols, mines)`:** Este método inicia e controla o fluxo do jogo. Permite ao jogador interagir com o tabuleiro, revelando células, marcando-as como suspeitas de conter minas e verifica se o jogo terminou com vitória ou derrota.
+
+7. **`RestartGame()`:** Este método reinicia o jogo, permitindo ao jogador jogar novamente sem precisar reiniciar o aplicativo.
+
+8. **`SaveGame()`:** Este método permite ao jogador salvar o estado atual do jogo para retomá-lo mais tarde.
+
+9. **`LoadGame()`:** Este método permite ao jogador carregar um jogo salvo anteriormente para continuar jogando.
+
+10. **`Options()`:** Este método permite ao jogador ajustar as configurações do jogo, como tamanho do tabuleiro e número de minas, durante o jogo.
+
+11. Temos níveis de dificuldade, que influenciam em quantas bombas serão colocadas no tabuleiro.
+
+12. Podemos alterar o tamanho do grid, definindo sua altura e largura.
+
+13. Botões para refazer a jogada e até mesmo resolver o "puzzle".
+
+14. Contadores de minas, espaços disponíveis, células vazias, tempo, etc.
+
+## Como Jogar
+
+1. Certifique-se que possui .NET Core na versão 3.1 ou superior. O MonoGame instalado também é essencial.
+2. Através do CMD, aceda à pasta ./Source e digite o seguinte comando:
 dotnet run --project .\Minesweeper.DesktopGL\Minesweeper.DesktopGL.csproj
-```
-
-to run DesktopGL version of Minesweeper. You can also run Visual Studio and open `Minesweeper.sln`.
-
-## Screenshot
-
-![Gameplay Example](./Images/Screenshot_Gameplay_V2.png)
-
-## TODO and current roadmap
-
-- [x] Simple minefield generation
-- [x] Flags
-- [x] Simple UI using ImGUI
-- [x] Generate mines after first open cell
-- [x] Easy mine generator (guaranteed that there will be no mines at the starting 3x3 square), maybe should reconsider the save field size
-- [x] Open appropriate cells after clicking on a free cell with the number value
-- [x] Add Timer
-- [x] Add warnings if there are more flags around a cell than its number value
-- [x] Show cells player tries to open 
-- [ ] Fix known (and unknown) bugs:
-  - [x] Mine field is empty after undoing the first action (on mine generation basically)
-  - [x] Game time accumulates incorrectly
-  - [x] Undo doesn't allow player to open cells if he caught a mine
-  - [ ] The mine field is zooming if scrolling ImGUI windows
-  - [ ] The grid which is drawn after clicking on any cell is ugly
-  - [ ] Restart doesn't work properly
-  - [ ] Redo doesn't work at all
-  - [x] Solve function works incorrectly
-  - [x] **You cannot win in current version**
-- [ ] Implement auto flagging if there is an obvious pattern
-- [ ] Make seeds work as expected
-- [ ] Open appropriate cells recursively 
-- [ ] Add local scores (SQLite will work well)
-- [ ] Guess-free minefield generation
-- [ ] Implement calculation of [3BV](http://www.stephan-bechtel.de/3bv.htm)
-- [ ] Add saveable replays
-- [ ] More game settings
-- [ ] Better UI
-- [ ] Add online scores
-- [ ] Android version
-- [ ] WebGL version
-
-## Dev Notes
-
-Taken from here: https://stackoverflow.com/questions/1738128/minesweeper-solving-algorithm
-
-The simplest algorithm is to place all of the mines randomly. (Make sure you don't overlap them!)
-
-**Problem**: The player's first click might be a mine.
-
-**Improvement**: Delay the generation of the grid until the user clicks on the first square, and don't put any mines in that square.
-
-**Problem**: The player's first click might reveal a non-zero number, and they will be forced to click randomly until something opens up.
-
-**Improvement**: Don't generate any mines in the (up to) eight squares around the first click, either.
-
-**Problem**: The player might be forced to guess at some point, making this a sad excuse for a logic puzzle.
-
-**Improvement**: Run the solver alongside the generator, making sure that the puzzle has a unique solution. This takes some cleverness, and isn't done in most variants.
-
-Another, less common way to resolve ambiguities is to detect when the player knows they are choosing between equally likely possibilities and "collapse the waveform" into the position they decided on. I have never seen this in action, but it would be kind of fun.
