@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "APSsUOGt/x6g6LaTg7qmvRuKOHizQF0yYbMdmcIMM4g0y0FLnx083j3c3Qbi+BaGabDiQfrs38lZZ5DJGMFa6Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jcwil\\source\\repos\\Minesweeper\\Source\\Minesweeper.Framework\\Minesweeper.Framework.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jcwil\\.nuget\\packages\\imgui.net\\1.75.0\\imgui.net.1.75.0.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1375-develop\\monogame.content.builder.task.3.8.0.1375-develop.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\monogame.extended\\3.7.0\\monogame.extended.3.7.0.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1375-develop\\monogame.framework.desktopgl.3.8.0.1375-develop.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\jcwil\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json' 12.0.3 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

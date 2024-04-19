@@ -1,0 +1,12 @@
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\bin\Debug\netstandard2.0\Content\Images\Tileset_Field.xnb
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\bin\Debug\netstandard2.0\Minesweeper.Framework.deps.json
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\bin\Debug\netstandard2.0\Minesweeper.Framework.dll
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\bin\Debug\netstandard2.0\Minesweeper.Framework.pdb
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\obj\Debug\netstandard2.0\Minesweeper.Framework.csproj.AssemblyReference.cache
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\obj\Debug\netstandard2.0\Minesweeper.Framework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\obj\Debug\netstandard2.0\Minesweeper.Framework.AssemblyInfoInputs.cache
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\obj\Debug\netstandard2.0\Minesweeper.Framework.AssemblyInfo.cs
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\obj\Debug\netstandard2.0\Minesweeper.Framework.csproj.CoreCompileInputs.cache
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\obj\Debug\netstandard2.0\Minesweeper.Framework.sourcelink.json
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\obj\Debug\netstandard2.0\Minesweeper.Framework.dll
+C:\Users\jcwil\source\repos\Minesweeper\Source\Minesweeper.Framework\obj\Debug\netstandard2.0\Minesweeper.Framework.pdb
